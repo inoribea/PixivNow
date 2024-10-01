@@ -1,6 +1,6 @@
 <template lang="pug">
 NaiveuiProvider#app-full-container
-  SiteNoticeBanner
+  #SiteNoticeBanner
   SiteHeader
 
   main
