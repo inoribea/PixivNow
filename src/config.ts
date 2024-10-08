@@ -5,7 +5,7 @@ export { version }
 export const SITE_ENV =
   import.meta.env.MODE === 'development' ||
   version.includes('-') ||
-  location.hostname === 'Power by inoribea'
+  location.hostname === 'Copied by inoribea'
     ? 'development'
     : 'production'
 
