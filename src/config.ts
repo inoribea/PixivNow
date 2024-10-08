@@ -5,7 +5,7 @@ export { version }
 export const SITE_ENV =
   import.meta.env.MODE === 'development' ||
   version.includes('-') ||
-  location.hostname === 'pixiv-next.vercel.app'
+  location.hostname === 'Power by inoribea'
     ? 'development'
     : 'production'
 
@@ -13,7 +13,7 @@ export const SITE_ENV =
 // Do not modify please
 export const GITHUB_OWNER = 'FreeNowOrg'
 export const GITHUB_REPO = 'PixivNow'
-export const GITHUB_URL = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}`
+export const GITHUB_URL = `https://imghub.inoribea.top`
 
 // Site name
 export const PROJECT_NAME = 'PixivNow'
