@@ -9,7 +9,8 @@ footer.global-footer
         li
           RouterLink(to='/ranking') 今日排行
         li
-          RouterLink(:href='`https://link.inoribea.top/url-shorter/bowstatusliewithout`') 短链生成
+          | 短链生成:
+          RouterLink(:href='`https://link.inoribea.top/bowstatusliewithout`') Touch to start.
     section.flex-1
       h4 关注我们
       ul
