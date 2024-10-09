@@ -9,7 +9,7 @@ footer.global-footer
         li
           RouterLink(to='/ranking') 今日排行
         li
-          ExternalLink(:href='`https://link.inoribea.top/bowstatusliewithout`') 短链生成
+          ExternalLink(:href='`https://imghub.inoribea.top/`') 个人图床
     section.flex-1
       h4 关注我们
       ul
@@ -25,11 +25,13 @@ footer.global-footer
     //-   h4 社交媒体
     //-     p Placeholder
     section.flex-1
-      h4 友情链接
-      div 快来 GitHub issues 交换友链吧~
-      //- ul
-      //-   li 链接
-
+      h4 其他功能
+      li
+          ExternalLink(:href='`https://dailyhot.inoribea.top/`') 今日热榜
+      li
+          ExternalLink(:href='`https://music.inoribea.top/`') 在线音乐
+      li
+          ExternalLink(:href='`https://ai.inoribea.top/`') AI对话
   .bottom.align-center
     p.copyright
       | Copyright &copy; {{ yearStr }}
