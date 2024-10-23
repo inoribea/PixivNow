@@ -13,7 +13,7 @@ export const SITE_ENV =
 // Do not modify please
 export const GITHUB_OWNER = 'FreeNowOrg'
 export const GITHUB_REPO = 'PixivNow'
-export const GITHUB_URL = `https://imghub.inoribea.top`
+export const GITHUB_URL = `https://github.com/inoribea/PixivNow`
 
 // Site name
 export const PROJECT_NAME = 'PixivNow'
