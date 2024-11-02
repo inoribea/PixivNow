@@ -9,7 +9,7 @@ footer.global-footer
         li
           RouterLink(to='/ranking') 今日排行
         li
-          ExternalLink(:href='`https://imghub.inoribea.top/`') 个人图床
+          ExternalLink(:href='`https://imghub.inoribea.moe/`') 个人图床
     section.flex-1
       h4 关注我们
       ul
@@ -27,11 +27,11 @@ footer.global-footer
     section.flex-1
       h4 其他功能
       li
-          ExternalLink(:href='`https://dailyhot.inoribea.top/`') 今日热榜
+          ExternalLink(:href='`https://dailyhot.inoribea.org/`') 今日热榜
       li
-          ExternalLink(:href='`https://music.inoribea.top/`') 在线音乐
+          ExternalLink(:href='`https://music.inoribea.org/`') 在线音乐
       li
-          ExternalLink(:href='`https://ai.inoribea.top/`') AI对话
+          ExternalLink(:href='`https://ai.inoribea.org/`') AI对话
   .bottom.align-center
     p.copyright
       | Copyright &copy; {{ yearStr }}
