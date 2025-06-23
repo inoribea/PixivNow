@@ -7,8 +7,6 @@ footer.global-footer
         li
           ExternalLink(href='/api/random?format=image') 随机图片
         li
-          RouterLink(to='/ranking') 今日排行
-        li
           ExternalLink(:href='`https://imghub.inoribea.moe/`') 个人图床
     section.flex-1
       h4 关注我们
@@ -26,8 +24,6 @@ footer.global-footer
     //-     p Placeholder
     section.flex-1
       h4 其他功能
-      li
-          ExternalLink(:href='`https://dailyhot.inoribea.org/`') 今日热榜
       li
           ExternalLink(:href='`https://music.inoribea.org/`') 在线音乐
       li
