@@ -4,6 +4,10 @@ import type { Artwork } from '~~/shared/types/Artworks'
 
 type ArtworkOrAd = Artwork | { isAdContainer: boolean }
 
+// /ajax/illust/discovery errors out (error = true) when max > 18 instead of
+// clamping, so clamp it here.
+const MAX_ILLUSTS = 18
+
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
   const requestImage =
@@ -11,20 +15,31 @@ export default defineEventHandler(async (event) => {
       query.format === 'image') &&
     query.format !== 'json'
 
+  const requestedMax = Number(query.max)
+  const max =
+    Number.isFinite(requestedMax) && requestedMax > 0
+      ? Math.min(Math.floor(requestedMax), MAX_ILLUSTS)
+      : MAX_ILLUSTS
+
   const { data, status } = await pixivFetch({
     event,
     url: '/ajax/illust/discovery',
     params: {
       mode: query.mode ?? 'safe',
-      max: requestImage ? '1' : ((query.max as string) ?? '18'),
+      max: requestImage ? '1' : String(max),
     },
   })
 
-  if (status !== 200) {
-    throw createError({ statusCode: status, data })
+  // Every /ajax/* response is wrapped in { error, message, body }: `data` is
+  // that envelope, the actual payload lives in `data.body`.
+  if (status !== 200 || data?.error) {
+    throw createError({
+      statusCode: status === 200 ? 502 : status,
+      data,
+    })
   }
 
-  const illusts = ((data as { illusts?: ArtworkOrAd[] }).illusts ?? []).filter(
+  const illusts = ((data.body?.illusts ?? []) as ArtworkOrAd[]).filter(
     (value): value is Artwork => Object.keys(value).includes('id')
   )
 
